@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+<ImageView
+    android:layout_width="336dp"
+    android:layout_height="wrap_content"
+    android:src="@drawable/main_logo"/>
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Choose your preferred signin method"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#D9D9D9"
+            android:textSize="20dp"
+            android:text="Email &amp; Password"
+            android:textColor="@color/black"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gmail_login_btn"
+            android:layout_marginTop="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/google_logo"
+            android:text="Login with Google"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:background="@drawable/shadow_btn"
+            android:textAllCaps="false"
+
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/facebook_login_btn"
+            android:layout_marginTop="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/fb_icon"
+            android:text="Sign up with Facebook"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:background="@drawable/shadow_btn"
+            android:textAllCaps="false"
+            />
+
+    </LinearLayout>
+</LinearLayout>
