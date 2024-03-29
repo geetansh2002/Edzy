@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/home"
+        android:title="Home"
+        android:id="@+id/home_nav"/>
+    <item
+        android:icon="@drawable/scan"
+        android:title="Scan"
+        android:id="@+id/scan_nav"/>
+    <item android:id="@+id/chat_nav"
+        android:title="Chat"
+        android:icon="@drawable/chat_icon"/>
+    <item android:id="@+id/todo_nav"
+        android:title="To-Do"
+        android:icon="@drawable/todo"/>
+    <item android:id="@+id/comm_nav"
+        android:title="Community"
+        android:icon="@drawable/comm_icon"/>
+</menu>
