@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".chat_nav">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/background_gradient_dark"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharad"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                app:layout_constraintHorizontal_bias="0.909"
+                app:layout_constraintLeft_toLeftOf="@id/imageView2"
+                app:layout_constraintRight_toLeftOf="@id/bot_img"
+                app:layout_constraintTop_toTopOf="@id/imageView2"
+                app:layout_constraintVertical_bias="0.441" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                app:layout_constraintRight_toRightOf="@id/profile_name"
+                app:layout_constraintTop_toBottomOf="@id/profile_name" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/white"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="#F5F5F5"
+                app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.975"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@id/imageView2"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/bot_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/bot_icon"
+                app:layout_constraintBottom_toBottomOf="@id/white"
+                app:layout_constraintEnd_toEndOf="@id/white"
+                app:layout_constraintStart_toStartOf="@+id/white"
+                app:layout_constraintTop_toTopOf="@id/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</FrameLayout>
