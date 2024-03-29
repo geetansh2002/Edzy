@@ -32,7 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="60dp"
-        android:padding="1dp"
         android:gravity="center">
 
         <TextView
@@ -42,6 +41,7 @@
             android:layout_marginRight="4dp"
             android:text="User messages"
             android:background="@drawable/shadowbox_curvecorners"
+
             android:textColor="@color/black"
             android:textSize="18dp" />
         <de.hdodenhof.circleimageview.CircleImageView
