@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30dp"
                 android:textColor="@color/black"
-                android:text="Log In"/>
+                android:text="Sign In"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,27 +68,27 @@
                     android:layout_marginBottom="10dp"
                     />
                 <Button
-                    android:id="@+id/login_btn"
+                    android:id="@+id/signin_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Log In"
+                    android:text="Sign In"
                     android:textSize="30dp"
                     />
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not Have an Account"
+                android:text="Already Have an Account"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="2dp"
                 />
             <Button
-                android:id="@+id/signin_btn_nav"
+                android:id="@+id/login_btn"
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
-                android:text="Sign in"/>
+                android:text="log in"/>
         </LinearLayout>
 
     </RelativeLayout>

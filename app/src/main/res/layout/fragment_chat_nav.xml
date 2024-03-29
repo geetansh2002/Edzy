@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".chat_nav">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
+        <RelativeLayout
+            android:id="@+id/top_part"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/background_gradient_dark"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/bot_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Geo Bot"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                    app:layout_constraintHorizontal_bias="0.962"
+                    app:layout_constraintLeft_toLeftOf="@id/imageView2"
+                    app:layout_constraintRight_toLeftOf="@id/bot_img"
+                    app:layout_constraintTop_toTopOf="@id/imageView2"
+                    app:layout_constraintVertical_bias="0.534" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online"
+                    android:textSize="12dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/bot_name"
+                    app:layout_constraintRight_toRightOf="@id/bot_name"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/bot_img"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/chat_bot_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/imageView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.975"
+                    app:layout_constraintStart_toStartOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@id/imageView2"
+                    app:layout_constraintVertical_bias="0.606" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_above="@id/bottom_part"
+            android:layout_below="@id/top_part"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="8dp"
+            android:padding="10dp"
+            android:background="@drawable/chat_view_background"
+            android:id="@+id/chat_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <RelativeLayout
+            android:id="@+id/bottom_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/curved_rectangle_grey">
+                <ImageView
+                    android:id="@+id/bot_clipart"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/replacable"/>
+
+                <EditText
+                    android:layout_toRightOf="@id/bot_clipart"
+                    android:layout_toLeftOf="@id/ryt_btn"
+                    android:id="@+id/input_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:hint="Ask Any Question" />
+
+                <ImageButton
+                    android:id="@+id/ryt_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/send_icon"
+                    android:rotation="15"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
 </FrameLayout>

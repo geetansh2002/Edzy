@@ -7,14 +7,14 @@
     <item
         android:icon="@drawable/scan"
         android:title="Scan"
-        android:id="@+id/scan_nav"/>
-    <item android:id="@+id/chat_nav"
+        android:id="@+id/scanner"/>
+    <item android:id="@+id/chatnav"
         android:title="Chat"
         android:icon="@drawable/chat_icon"/>
-    <item android:id="@+id/todo_nav"
+    <item android:id="@+id/scedular"
         android:title="To-Do"
         android:icon="@drawable/todo"/>
-    <item android:id="@+id/comm_nav"
+    <item android:id="@+id/comm_nav2"
         android:title="Community"
         android:icon="@drawable/comm_icon"/>
 </menu>
