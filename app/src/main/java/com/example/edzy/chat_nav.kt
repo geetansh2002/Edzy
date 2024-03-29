@@ -1,23 +1,31 @@
 package com.example.edzy
 
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.ai.client.generativeai.GenerativeModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.IOException
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [chat_nav.newInstance] factory method to
- * create an instance of this fragment.
- */
 class chat_nav : Fragment() {
-    // TODO: Rename and change types of parameters
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var messageList: MutableList<Message>
+    private lateinit var messageAdapter: MessageAdapter
     private var param1: String? = null
     private var param2: String? = null
 
@@ -26,6 +34,50 @@ class chat_nav : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        messageList = mutableListOf()
+        recyclerView = view.findViewById(R.id.chat_recycler_view)
+        messageAdapter = MessageAdapter(messageList,recyclerView)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            (layoutManager as LinearLayoutManager).stackFromEnd = true
+            recyclerView.layoutManager = layoutManager
+            adapter = messageAdapter
+        }
+        val textbox=view.findViewById<EditText>(R.id.input_text)
+        val sendButton=view.findViewById<ImageButton>(R.id.ryt_btn)
+        view.viewTreeObserver.addOnGlobalLayoutListener {
+            val r = Rect()
+            view.getWindowVisibleDisplayFrame(r)
+            val screenHeight = view.height
+            val keypadHeight = screenHeight - r.bottom
+            if (keypadHeight > screenHeight * 0.15) {
+                // Keyboard is open
+                recyclerView.scrollToPosition(messageList.size - 1)
+            } else {
+            }
+        }
+        sendButton.setOnClickListener {
+            val question = textbox.text.toString().trim()
+            if (question.isNotEmpty()) {
+                messageAdapter.addMessage(Message(question, Message.SENT_BY_ME))
+                recyclerView.scrollToPosition(messageAdapter.itemCount)
+                textbox.text.clear()
+
+                // Launching a coroutine to call the suspend function
+                CoroutineScope(Dispatchers.Main).launch {
+                    try {
+                        callAI(question)
+                    } catch (e: IOException) {
+                        Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(requireContext(), "Please enter a message", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -38,15 +90,6 @@ class chat_nav : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment chat_nav.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             chat_nav().apply {
@@ -55,5 +98,20 @@ class chat_nav : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    private suspend fun callAI(question: String) {
+        messageAdapter.addMessage(Message("typing....", Message.SENT_BY_BOT))
+        val generativeModel = GenerativeModel(
+            modelName = "gemini-pro",
+            apiKey = getString(R.string.ai_api_key)
+        )
+        val response = withContext(Dispatchers.IO) {
+            generativeModel.generateContent(question)
+        }
+        response.text?.let { Message(it, Message.SENT_BY_BOT)
+        }
+            ?.let { messageAdapter.addMessage(it) }
+        recyclerView.scrollToPosition(messageAdapter.itemCount)
+        messageAdapter.removeTypingIndicator()
     }
 }

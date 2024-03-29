@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation (libs.circleimageview)
+    implementation(libs.generativeai)
     androidTestImplementation(libs.androidx.espresso.core)
 }
