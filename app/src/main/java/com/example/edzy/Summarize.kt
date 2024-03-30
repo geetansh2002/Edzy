@@ -60,7 +60,7 @@ class Summarize : AppCompatActivity() {
 
         val inputContent = content {
             image(imageBitmap)
-            text("Summarize the text in the image in simple words")
+            text("provide summary of the text in the image in simple words")
         }
 
         val response = generativeModel.generateContent(inputContent)
