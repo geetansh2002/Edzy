@@ -36,7 +36,7 @@ private const val ARG_PARAM2 = "param2"
 
 
 class scanner : Fragment() {
-    private lateinit var bitmap: Bitmap
+    private lateinit var uri1:Uri
     private lateinit var pickImage: ImageButton
     private var imageUri2: Uri? = null
     @RequiresApi(Build.VERSION_CODES.P)
@@ -52,13 +52,7 @@ class scanner : Fragment() {
                         .into(pickImage)
 
                     imageUri2?.let { uri ->
-                        CoroutineScope(Dispatchers.Main).launch {
-                            try {
-                                bitmap = getBitmapFromUri(uri)
-                            } catch (e: IOException) {
-                                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                            }
-                        }
+                        uri1= imageUri2 as Uri
                     }
                 }
             }
@@ -106,19 +100,19 @@ class scanner : Fragment() {
             imagePicker()
         }
         summarizeBut.setOnClickListener {
-            val byteArrayOutputStream = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
-            val byteArray = byteArrayOutputStream.toByteArray()
-
             val intent = Intent(requireContext(), Summarize::class.java)
-            intent.putExtra("bitmap", byteArray)
-            startActivity(intent)
+            uri1?.let { uri ->
+                intent.putExtra("uri", uri.toString())
+                startActivity(intent)
+            } ?: run {
+                Toast.makeText(requireContext(), "Please select an image first", Toast.LENGTH_SHORT).show()
+            }
         }
+
         val language=typebox.text.toString()
         translateBut.setOnClickListener {
             CoroutineScope(Dispatchers.Main).launch {
                 try {
-                    translate(language,bitmap)
                 } catch (e: IOException) {
                     Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
