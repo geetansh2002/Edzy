@@ -41,6 +41,7 @@
                 app:layout_constraintVertical_bias="0.441" />
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Welcome Back"
@@ -70,6 +71,17 @@
                 app:layout_constraintEnd_toEndOf="@id/white"
                 app:layout_constraintStart_toStartOf="@+id/white"
                 app:layout_constraintTop_toTopOf="@id/white" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/logout_icon"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="51dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
