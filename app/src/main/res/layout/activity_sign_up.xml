@@ -26,14 +26,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:text="Sign In"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/curved_rectangle_grey"
+                android:background="@drawable/rectangle_grey"
                 android:padding="20dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
                     android:textSize="20dp"
                     android:padding="15dp"
                     android:hint="Enter Email Id"
-                    android:background="@drawable/chat_view_background"
+                    android:background="#C7C9C2"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:background="@drawable/chat_view_background"
+                    android:background="#C7C9C2"
                     android:padding="15dp"
                     android:hint="Enter Password"
                     android:layout_marginBottom="10dp"
@@ -75,21 +75,30 @@
                     android:textSize="30dp"
                     />
             </LinearLayout>
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Already Have an Account"
-                android:textSize="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="2dp"
-                />
-            <Button
-                android:id="@+id/login_btn"
-                android:layout_width="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_height="wrap_content"
-                android:text="log in"/>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Already Have an Account"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Login"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:clickable="true"/>
+            </LinearLayout>
         </LinearLayout>
+
 
     </RelativeLayout>
 </RelativeLayout>
