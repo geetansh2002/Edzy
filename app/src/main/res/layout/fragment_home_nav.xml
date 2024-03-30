@@ -71,5 +71,6 @@
                 app:layout_constraintStart_toStartOf="@+id/white"
                 app:layout_constraintTop_toTopOf="@id/white" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </RelativeLayout>
 </FrameLayout>
