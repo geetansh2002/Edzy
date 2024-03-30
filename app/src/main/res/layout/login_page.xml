@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/curved_rectangle_grey"
+                android:background="@drawable/rectangle_gray"
                 android:padding="20dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,10 +46,11 @@
                     android:id="@+id/user_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:padding="15dp"
+                    android:layout_marginTop="5dp"
                     android:hint="Enter Email Id"
-                    android:background="@drawable/chat_view_background"
+                    android:background="#F5F5F5"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -61,9 +62,10 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:textSize="20dp"
-                    android:background="@drawable/chat_view_background"
-                    android:padding="15dp"
+                    android:background="#F5F5F5"
+                    android:padding="10dp"
                     android:hint="Enter Password"
                     android:layout_marginBottom="10dp"
                     />
@@ -75,6 +77,9 @@
                     android:textSize="30dp"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,13 +87,18 @@
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="2dp"
+                android:textColor="@color/white"
                 />
-            <Button
-                android:id="@+id/signin_btn_nav"
-                android:layout_width="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_height="wrap_content"
-                android:text="Sign in"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:clickable="true"/>
+            </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>
