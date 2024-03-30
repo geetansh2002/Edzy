@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     tools:context=".home_nav">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,66 +43,51 @@
                 />
         </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llayout"
-            android:gravity="center">
+            android:layout_below="@+id/llayout"
+            android:layout_marginTop="56dp"
+            android:gravity="center"
+            android:text="No Notifications Yet"
+            android:textSize="25dp" />
 
-            <ImageButton
-                android:id="@+id/img_btn1"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="2dp"
-                android:padding="10dp"
-                android:src="@drawable/clip_login"/>
-
-            <RelativeLayout
-                android:id="@+id/midlayout"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_below="@id/img_btn1"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
-
-                <ImageButton
-                    android:id="@+id/img_btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    />
-
-                <ImageButton
-                    android:id="@+id/img_btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true" />
-
-            </RelativeLayout>
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llayout"
+            android:layout_marginTop="137dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="No Schedules Available"
+            android:textSize="25dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="82dp">
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_marginBottom="-282dp"
+            android:orientation="vertical"
+            android:padding="25dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solve Your Doubts"
+                android:textSize="30dp" />
+
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayout"
-                android:gravity="center"
-                android:layout_marginTop="42dp"
-                android:text="Here Comes Notification"
-                android:textSize="30dp" />
+                android:text="Chat with AI"
+                android:textSize="25dp" />
         </LinearLayout>
 
     </RelativeLayout>
+
+
+
 </FrameLayout>
