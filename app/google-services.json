@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "344352366723",
+    "firebase_url": "https://edzy-his-default-rtdb.firebaseio.com",
+    "project_id": "edzy-his",
+    "storage_bucket": "edzy-his.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344352366723:android:a45cfba5f51a8003f03bb6",
+        "android_client_info": {
+          "package_name": "com.example.edzy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_-PPvWSv2aeEH9uS5K_cQjfJz5JIq4BI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
