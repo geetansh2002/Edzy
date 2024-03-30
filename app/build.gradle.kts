@@ -48,5 +48,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     implementation (libs.circleimageview)
     implementation(libs.generativeai)
+    implementation (libs.glide)
     androidTestImplementation(libs.androidx.espresso.core)
 }
