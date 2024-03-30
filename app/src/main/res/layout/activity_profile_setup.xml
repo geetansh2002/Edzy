@@ -19,11 +19,12 @@
         android:textSize="35dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="116dp"
         android:src="@drawable/bot_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -38,7 +39,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/circleImageView"
         app:layout_constraintTop_toTopOf="@+id/circleImageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        />
 
     <LinearLayout
         android:layout_width="300dp"
@@ -51,6 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -61,13 +64,13 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/chat_view_background"
+            android:background="@drawable/chat_white_box"
             android:hint="Enter Name"
             android:paddingLeft="17dp"
-            android:paddingTop="5dp"
+            android:paddingTop="7dp"
             android:paddingRight="17dp"
-            android:paddingBottom="5dp"
-            android:textSize="20dp" />
+            android:paddingBottom="7dp"
+            android:textSize="25dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -78,17 +81,19 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/dob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/chat_view_background"
-            android:hint="Enter Name"
+            android:background="@drawable/chat_white_box"
+            android:hint="Enter DOB"
             android:paddingLeft="17dp"
-            android:paddingTop="5dp"
+            android:paddingTop="7dp"
             android:paddingRight="17dp"
-            android:paddingBottom="5dp"
-            android:textSize="20dp" />
+            android:paddingBottom="7dp"
+            android:textSize="25dp" />
 
         <Button
+            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

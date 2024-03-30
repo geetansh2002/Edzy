@@ -68,7 +68,7 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/img_accept"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/scan_top"
@@ -82,9 +82,8 @@
                     android:id="@+id/scan_img_btn"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/background_gradient_dark"
+                    android:src="@drawable/add_btn_bck"
                     android:scaleType="fitCenter"
-                    android:backgroundTint="@color/black"
                     />
                 <TextView
                     android:layout_width="wrap_content"
