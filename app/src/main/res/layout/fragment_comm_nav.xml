@@ -80,6 +80,7 @@
 
     </RelativeLayout>
     <Button
+        android:id="@+id/addPost"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
