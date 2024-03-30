@@ -2,16 +2,17 @@ package com.example.edzy
 
 import android.graphics.Rect
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.ai.client.generativeai.GenerativeModel
+import com.google.ai.client.generativeai.type.PromptBlockedException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -105,13 +106,26 @@ class chat_nav : Fragment() {
             modelName = "gemini-pro",
             apiKey = getString(R.string.ai_api_key)
         )
-        val response = withContext(Dispatchers.IO) {
-            generativeModel.generateContent(question)
+        try {
+            val response = withContext(Dispatchers.IO) {
+                generativeModel.generateContent(question)
+            }
+            response.text?.let {
+                Message(it, Message.SENT_BY_BOT)
+            }?.let {
+                messageAdapter.addMessage(it)
+            }
+        } catch (e: PromptBlockedException) {
+            // Handle the blocked prompt exception
+            // Here, you can return a warning message or take appropriate action
+            messageAdapter.addMessage(Message("The prompt is inappropriate. Please try again with a different prompt.", Message.SENT_BY_BOT))
+        } catch (e: IOException) {
+            // Handle other IO exceptions
+            Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+        } finally {
+            recyclerView.scrollToPosition(messageAdapter.itemCount)
+            messageAdapter.removeTypingIndicator()
         }
-        response.text?.let { Message(it, Message.SENT_BY_BOT)
-        }
-            ?.let { messageAdapter.addMessage(it) }
-        recyclerView.scrollToPosition(messageAdapter.itemCount)
-        messageAdapter.removeTypingIndicator()
     }
+
 }

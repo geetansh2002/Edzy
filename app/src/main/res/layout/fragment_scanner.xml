@@ -78,15 +78,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageButton
                     android:id="@+id/scan_img_btn"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/background_gradient_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="113dp"
                     android:scaleType="fitCenter"
-                    android:backgroundTint="@color/black"
-                    />
+                    android:src="@drawable/add_btn_bck" />
                 <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add Your Image to Translate or Summarize"/>
@@ -110,17 +111,20 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4A6572"
                 android:paddingLeft="40dp"
-                android:paddingTop="5dp"
+                android:paddingTop="7dp"
+                android:layout_marginTop="20dp"
                 android:paddingRight="40dp"
-                android:paddingBottom="5dp"
+                android:paddingBottom="7dp"
                 android:text="Click to Summarize"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="23dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Or"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"
                 android:textSize="30dp" />
 
             <LinearLayout
@@ -150,9 +154,9 @@
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#4A6572"
                     android:paddingLeft="40dp"
-                    android:paddingTop="5dp"
+                    android:paddingTop="7dp"
                     android:paddingRight="40dp"
-                    android:paddingBottom="5dp"
+                    android:paddingBottom="7dp"
                     android:text="Click to Translate Text"
                     android:textColor="@color/white"
                     android:textSize="20dp" />

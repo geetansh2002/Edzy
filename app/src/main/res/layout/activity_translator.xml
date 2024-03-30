@@ -47,27 +47,7 @@
             android:padding="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"/>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right">
-            <ImageView
-                android:id="@+id/right_chat_text"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginRight="4dp"
-                android:text="User messages"
-                android:background="@drawable/shadowbox_curvecorners"
 
-                android:textColor="@color/black"
-                android:textSize="18dp" />
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_icon"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/bot_icon"/>
-        </LinearLayout>
         <LinearLayout
             android:layout_marginTop="10dp"
             android:padding="5dp"
