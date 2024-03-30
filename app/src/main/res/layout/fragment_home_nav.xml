@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     tools:context=".home_nav">
+
     <RelativeLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -13,44 +14,48 @@
         tools:context=".MainActivity">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:src="@drawable/bot_icon"
             android:id="@+id/action_bar"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="42dp"
-            android:layout_marginEnd="25dp"/>
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="22dp"
+            android:src="@drawable/bot_icon" />
 
         <LinearLayout
             android:id="@+id/llayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_below="@id/action_bar"
-            android:padding="2dp"
-            android:layout_marginLeft="20dp">
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="141dp"
+            android:orientation="vertical"
+            android:padding="2dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Welcome Back"
                 android:textColor="@color/black"
-                android:textSize="30dp"/>
+                android:textSize="30dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your study buddy id online for you"
-                />
+                android:text="Your study buddy id online for you" />
         </LinearLayout>
 
         <TextView
-            android:padding="5dp"
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/llayout"
             android:layout_marginTop="56dp"
             android:gravity="center"
+            android:padding="5dp"
             android:text="No Notifications Yet"
             android:textSize="25dp" />
 
@@ -70,10 +75,12 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView2"
             android:layout_marginBottom="-282dp"
+            android:background="@drawable/shadowbox_curvecorners"
             android:orientation="vertical"
             android:padding="25dp">
 
             <TextView
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Solve Your Doubts"
@@ -85,9 +92,5 @@
                 android:text="Chat with AI"
                 android:textSize="25dp" />
         </LinearLayout>
-
     </RelativeLayout>
-
-
-
 </FrameLayout>
