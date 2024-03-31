@@ -77,4 +77,5 @@ class home_nav : Fragment() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
 }

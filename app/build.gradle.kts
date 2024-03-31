@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.storage)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     implementation (libs.circleimageview)
@@ -56,5 +57,7 @@ dependencies {
     implementation (libs.glide)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.firebase.firestore)
+    implementation ("com.firebaseui:firebase-ui-database:7.2.0")
+    implementation ("com.firebaseui:firebase-ui-firestore:7.2.0")
     implementation (platform(libs.firebase.bom))
 }
